@@ -1,0 +1,12 @@
+/**
+ * LAYOUT
+ * 사이트나 어플리케이션의 레이아웃에 기여하는 모든 것.
+ * 사이트의 주요 부분(header, footer, navigation, sidebar…)
+ * @import 'layout/..';
+ */
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+@import 'layout/responsive';
+@import 'layout/gridcheck';

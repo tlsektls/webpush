@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+**/node_modules
+**/.cache
+**/dist
+.git
+.gitignore
+.DS_Store
+**/*.local
+**/.env*
+backend/users.json
+backend/subscriptions.json
+

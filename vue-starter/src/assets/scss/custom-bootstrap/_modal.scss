@@ -1,0 +1,105 @@
+.modal-dialog {
+  @include media-breakpoint-down(md) {
+    max-width: calc(100% - #{rem(32)});
+    margin: 0 rem(16);
+  }
+
+  .modal-content {
+    border-radius: 15px;
+
+    .modal-title {
+      font-weight: 700;
+      font-size: rem(24);
+      color: $gray-600;
+    }
+    .modal-header {
+      padding: rem(40) rem(40) rem(16) rem(40);
+      border: 0;
+    }
+    .modal-body {
+      padding: 0 rem(24);
+
+      .modal-body-inner {
+        padding: rem(16) rem(40) rem(12) rem(40);
+      }
+    }
+    .modal-footer {
+      padding: rem(12) rem(40) rem(40) rem(40);
+      border: 0;
+    }
+  }
+}
+
+// Alert
+#idAlert {
+  .modal-dialog {
+    .modal-content {
+      overflow: hidden;
+
+      .modal-header {
+        padding: 0;
+
+        .modal-icon-wrap {
+          width: 100%;
+          padding: rem(40);
+          text-align: center;
+
+          .modal-icon {
+            font-size: 4rem;
+          }
+          &.success {
+            background-color: $success-bg;
+
+            .modal-icon {
+              color: $success;
+            }
+          }
+          &.danger,
+          &[class*='delete'],
+          &[class*='isActive'] {
+            background-color: $danger-bg;
+
+            .modal-icon {
+              color: $danger;
+            }
+          }
+          &.info,
+          &.history,
+          &.login {
+            background-color: $info-bg;
+
+            .modal-icon {
+              color: $info;
+            }
+          }
+          &.warning {
+            background-color: $warning-bg;
+
+            .modal-icon {
+              color: $warning;
+            }
+          }
+        }
+      }
+      .modal-body {
+        padding-top: rem(32);
+        padding-bottom: rem(20);
+
+        p {
+          font-size: rem(18);
+          font-weight: 500;
+
+          &.sub-message {
+            font-size: rem(14);
+            font-weight: 400;
+            margin-top: rem(4);
+            color: $gray-500;
+          }
+        }
+      }
+      .modal-footer {
+        justify-content: center;
+      }
+    }
+  }
+}

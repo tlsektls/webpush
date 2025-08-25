@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "$2b$10$6vJuD01x1L4Y2mfg21aiXOxMJNPt7jZr/Q4oYj471e4VbHT7anD8m",
+    "role": "admin",
+    "group": "manager"
+  },
+  {
+    "id": 2,
+    "username": "user1",
+    "password": "$2b$10$tp/gRrCaBiiapBVFouXNVOxpzwM/yyEH2ps3aa4R8XR0b7qIMmeJq",
+    "role": "user",
+    "group": "team1"
+  },
+  {
+    "id": 3,
+    "username": "user2",
+    "password": "$2b$10$mUDCR4KRu8VACL8tI3rGAucKGkSRd092wvZii5C9sWn963jWgc/p.",
+    "role": "user",
+    "group": "team1"
+  },
+  {
+    "id": 4,
+    "username": "user3",
+    "password": "$2b$10$KLozKQbKajLu3wGY/7S6R.ygqPo/Vuy49bSaClTKx9276irLG85Iq",
+    "role": "user",
+    "group": "team2"
+  },
+  {
+    "id": 5,
+    "username": "user4",
+    "password": "$2b$10$NLSsNMP4bQmiufXz1kItQuAYqofjCXm/XygSFVlgAv1GksAs2DIna",
+    "role": "user",
+    "group": "team2"
+  },
+  {
+    "id": 6,
+    "username": "admin2",
+    "password": "$2b$10$rW7Bnhgw.iwWHu3sdrgGweydLVhRScanpC79Am.Gks2FWk2EqzeYq",
+    "role": "admin",
+    "group": "manager"
+  },
+  {
+    "id": 7,
+    "username": "test",
+    "password": "$2b$10$bTXKaDAM/ab8ivGtHBCeY.SojnJCZedoFJ2418dcind8OJFlQdJCy",
+    "role": "user",
+    "group": null
+  }
+]

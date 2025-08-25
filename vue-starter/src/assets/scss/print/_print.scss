@@ -1,0 +1,223 @@
+// ----------------------------------------------------------------
+// Print.css
+// ----------------------------------------------------------------
+
+
+// @Page Media
+// ----------------------------------------------------------------
+
+// 모든 페이지
+@page {
+  size: A4;
+  margin: 1cm;
+  padding: 0;
+
+  @bottom-right {
+    content: counter(page);
+  }
+}
+
+// 첫 페이지만
+@page :first {
+  margin-top: 1cm;
+
+  @top-left {
+    content: '';
+    margin: 0;
+  }
+
+  @bottom-right {
+    content: '';
+    margin: 0;
+  }
+
+  @bottom-right {
+    content: '';
+    margin: 0;
+  }
+}
+
+// 짝수 페이지
+@page:right{
+  @bottom-left {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "Our Cats";
+    font-size: 9pt;
+    color: #333;
+  }
+
+  @bottom-right {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: counter(page);
+    font-size: 9pt;
+  }
+
+  @top-right {
+    content:  string(doctitle);
+    margin: 30pt 0 10pt 0;
+    font-size: 9pt;
+    color: #333;
+  }
+}
+
+// 홀수 페이지
+@page:left {
+  @bottom-right {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "Our Cats";
+    font-size: 9pt;
+    color: #333;
+  }
+
+  @bottom-left {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: counter(page);
+    font-size: 9pt;
+  }
+}
+
+// @Screen Media
+//-----------------------------------------------------------------
+
+@media screen {
+  html { margin: 1em }
+  .page,
+  .page-break	{ display: none }
+}
+
+// @Print Media
+// ----------------------------------------------------------------
+
+@media print and (color) {
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+
+  // 불필요한 섹션 제거
+  header, footer, aside, nav, .menu, .hero, .jumbotron, .slogan {
+    display: none;
+  }
+
+  /* 폰트 설정 */
+  body {
+    font: 10pt/1.6 sans-serif;
+    background: white;
+    color: black;
+
+    // 메인 콘텐츠만 노출
+    //> *:not(main) {
+    //  display: none;
+    //}
+  }
+
+  // 이미지 제거 또는 반전
+  * {
+    color: #000;
+    background-image: none !important;
+    background-color: #fff;
+    //background: none;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  /* 이미지 기본 숨김 */
+  img, svg {
+    display: none;
+  }
+
+  img.d-print, svg.d-print {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  // 어두운 배경에서 이미지 색상 반전
+  img.dark {
+    filter: invert(100%) hue-rotate(180deg) brightness(120%) contrast(150%);
+  }
+
+  /* 보충 내용 추가 */
+  //a[href]:after {
+  //  content: ' [" attr(href) "]';
+  //}
+
+  abbr[title]:after {
+    content: ' [" attr(title) "]';
+  }
+
+  a[href^="#"]:after,
+  a[href^='javascript']:after {
+    content: '';
+  }
+
+  main::after {
+    content: 'Copyright site.com';
+    display: block;
+    text-align: center;
+  }
+
+  /* 페이지 나누기 */
+  section {
+    page-break-before: always;
+  }
+
+  // 열 설정
+  article {
+    page-break-before: always;
+    widows: 2;
+    column-width: 17em;
+    column-gap: 3em;
+  }
+
+  h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1 {
+    page-break-before: auto !important;
+    -weasy-bookmark-level: none;
+    margin-top: 0 !important;
+  }
+
+  h1+p, h2+p, h3+p,
+  h1+table, h2+table, h3+table  {
+    page-break-before: avoid;
+  }
+
+  table, ul, figure, img, svg {
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-row-group;
+  }
+
+  p {
+    orphans: 3;
+  }
+
+  // 페이지 줄바꿈
+  .page-break	{
+    display: block;
+    border-bottom: 1px dashed #000;
+    page-break-after: always;
+    box-decoration-break: clone;
+  }
+
+  // 차트 줄바꿈
+  div.chart {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+}

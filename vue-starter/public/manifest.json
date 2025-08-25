@@ -1,0 +1,39 @@
+{
+  "lang": "ko",
+  "dir": "ltr",
+  "name": "Example",
+  "short_name": "Example",
+  "display": "standalone",
+  "categories": ["food"],
+  "description": "설명입니다.",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#0dd4bc",
+  "android_package_name": "com.example.www.example",
+  "prefer_related_applications": true,
+  "related_applications": [{
+      "id": "com.example.www.example",
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.www.example"
+  }],
+  "launch_handler": {
+    "route_to": "existing-client",
+    "navigate_existing_client": "never"
+  },
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

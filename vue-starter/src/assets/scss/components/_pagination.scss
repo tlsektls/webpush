@@ -1,0 +1,40 @@
+.pagination {
+  .page-item {
+    .page-link {
+      display: flex;
+      border-color: $gray-200;
+      color: #495057;
+      border-radius: 0;
+      font-weight: 500;
+      cursor: pointer;
+
+      i {
+        font-size: rem(20);
+        font-weight: 700;
+      }
+    }
+    &.active {
+      .page-link {
+        color: #fff;
+        border-color: $primary;
+      }
+    }
+    &.disabled {
+      .page-link {
+        color: $gray-200;
+      }
+    }
+    &:first-of-type {
+      .page-link {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+    }
+    &:last-of-type {
+      .page-link {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}

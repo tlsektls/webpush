@@ -1,0 +1,42 @@
+/*
+ * functions
+ */
+
+// Function to convert px value into rem
+// USAGE:
+// body { margin: rem(20); }
+
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return ($pixels / $context) * 1rem;
+}
+
+// font size
+@for $i from 1 to 101 {
+  .fs-#{$i} {
+    font-size: rem($i) !important;
+  }
+}
+
+// border-radius
+@for $i from 1 to 21 {
+  .rounded-#{$i} {
+    border-radius: $i + px !important;
+  }
+}
+
+// margin top minus
+@for $i from 1 to 101 {
+  .mt-n-#{$i} {
+    margin-top: rem(-$i) !important;
+  }
+}

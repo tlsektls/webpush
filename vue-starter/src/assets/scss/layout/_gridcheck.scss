@@ -1,0 +1,121 @@
+/*
+ * Grid Check
+ */
+
+$xl-grid: 12;
+$md-grid: 12;
+$sm-grid: 8;
+$xs-grid: 4;
+
+$xl-gab: $grid-gutter-width;
+$md-gab: $grid-gutter-width;
+$sm-gab: $grid-gutter-width;
+$xs-gab: $grid-gutter-width;
+
+#grid-check {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+
+  .grid-check-wrap {
+    height: 100%;
+    margin: 0 auto;
+
+    .grid-check-row {
+      display: none;
+      height: 100%;
+
+      .col {
+        display: block;
+        width: 100%;
+        background-color: aquamarine;
+        opacity: 0.5;
+      }
+
+      &.xl {
+        display: flex;
+        column-gap: $xl-gab;
+
+        &::before {
+          content: $xl-grid + '';
+        }
+      }
+      &.md {
+        column-gap: $md-gab;
+
+        &::before {
+          content: $md-grid + '';
+        }
+      }
+      &.sm {
+        column-gap: $sm-gab;
+
+        &::before {
+          content: $sm-grid + '';
+        }
+      }
+      &.xs {
+        column-gap: $xs-gab;
+
+        &::before {
+          content: $xs-grid + '';
+        }
+      }
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &.active {
+    display: block;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #grid-check {
+    .grid-check-wrap {
+      .grid-check-row {
+        &.xl {
+          display: none;
+        }
+        &.md {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #grid-check {
+    .grid-check-wrap {
+      .grid-check-row {
+        &.md {
+          display: none;
+        }
+        &.sm {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  #grid-check {
+    .grid-check-wrap {
+      .grid-check-row {
+        &.sm {
+          display: none;
+        }
+        &.xs {
+          display: flex;
+        }
+      }
+    }
+  }
+}

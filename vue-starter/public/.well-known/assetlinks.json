@@ -1,0 +1,25 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds",
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "web",
+      "site": "https://www.example.com"
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds",
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.www.example",
+      "sha256_cert_fingerprints": [
+        "EA:73:0C:A9:D4:7B:51:D8:F6:E4:93:F4:B6:E2:20:5D:FE:5B:FB:1A:D6:71:54:44:30:36:C0:2D:B7:D3:FA:C5"
+      ]
+    }
+  }
+]

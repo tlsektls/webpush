@@ -1,0 +1,64 @@
+/*
+ * Footer
+ */
+
+.layout-footer {
+  background-color: $gray-100;
+  padding: rem(32) 0 rem(64) 0;
+  color: $gray-500;
+
+  .navbar-brand {
+    img {
+      height: 40px;
+    }
+    i {
+      font-size: rem(24);
+    }
+  }
+  p {
+    font-size: rem(14);
+    margin-bottom: rem(2);
+
+    b {
+      font-weight: 500;
+    }
+    &.copyright {
+      margin-top: rem(16);
+      font-size: rem(12);
+      color: $gray-400;
+    }
+  }
+  a {
+    font-size: rem(14);
+
+    &:focus {
+      background-color: transparent;
+    }
+  }
+  .term-wrap {
+    margin-bottom: rem(8);
+
+    a {
+      position: relative;
+      text-decoration: none;
+      margin-right: rem(16);
+      font-weight: 500;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: rem(10);
+        top: 50%;
+        right: rem(-8);
+        transform: translateY(-50%);
+        background-color: $gray-200;
+      }
+      &:last-of-type {
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+}

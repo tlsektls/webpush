@@ -1,0 +1,67 @@
+//
+// Responsive styles
+// --------------------------------------------------
+
+/**
+ * @section Breakpoints
+ * 자바스크립트에서 분기점 체크용도
+ * 화면에 노출되지 않음
+ */
+body:before {
+  content: 'xs';
+  display: none;
+  visibility: hidden;
+}
+@media (min-width: #{map-get($grid-breakpoints, sm)}) {
+  body:before {
+    content: 'sm';
+  }
+}
+@media (min-width: #{map-get($grid-breakpoints, md)}) {
+  body:before {
+    content: 'md';
+  }
+}
+@media (min-width: #{map-get($grid-breakpoints, lg)}) {
+  body:before {
+    content: 'lg';
+  }
+}
+@media (min-width: #{map-get($grid-breakpoints, xl)}) {
+  body:before {
+    content: 'xl';
+  }
+}
+@media (min-width: #{map-get($grid-breakpoints, xxl)}) {
+  body:before {
+    content: 'xxl';
+  }
+}
+
+// container padding
+.container {
+  max-width: 100%;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+
+  @include media-breakpoint-up(md) {
+    max-width: 100%;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 100%;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: 1280px;
+    padding-right: 32px !important;
+    padding-left: 32px !important;
+  }
+  @include media-breakpoint-up(xxl) {
+    max-width: 1536px;
+    padding-right: 28px !important;
+    padding-left: 28px !important;
+  }
+}

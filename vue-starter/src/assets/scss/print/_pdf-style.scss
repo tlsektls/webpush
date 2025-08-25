@@ -1,0 +1,35 @@
+// ----------------------------------------------------------------
+// Print mode : PDF Style
+// ----------------------------------------------------------------
+
+/* Document Size */
+
+[print-size="A4"] {
+  width: 21cm;
+  //height: 29.7cm;
+}
+
+[print-size="A4"][print-layout="portrait"] {
+  width: 29.7cm;
+  //height: 21cm;
+}
+
+[print-size="A3"] {
+  width: 29.7cm;
+  //height: 42cm;
+}
+
+[print-size="A3"][print-layout="portrait"] {
+  width: 42cm;
+  //height: 29.7cm;
+}
+
+[print-size="A5"] {
+  width: 14.8cm;
+  //height: 21cm;
+}
+
+[print-size="A5"][print-layout="portrait"] {
+  width: 21cm;
+  //height: 14.8cm;
+}

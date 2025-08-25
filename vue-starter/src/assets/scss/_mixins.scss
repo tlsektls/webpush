@@ -1,0 +1,131 @@
+/* Text
+ * *********************************/
+
+// 한 줄 자르기
+
+@mixin text-truncate {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 여러 줄 자르기 스타일 (multiline)
+// ex: @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+
+@mixin multiline-text-truncate($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+  position: relative;
+  max-height: $lineHeight * $lineCount;
+  padding-right: 1em;
+  margin-right: -1em;
+  overflow: hidden;
+  line-height: $lineHeight;
+  text-align: justify;
+
+  &::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    content: '...';
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    content: '';
+    background: $bgColor;
+  }
+}
+
+// IE not working!
+// @mixin multiline-text-truncate($lineHeight: 1.5em, $lineCount: 2) {
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   display: -webkit-box;
+//   -webkit-line-clamp: $lineCount;
+//   -webkit-box-orient: vertical;
+//   line-height: $lineHeight;
+//   max-height: $lineHeight * $lineCount;
+// }
+
+@mixin text-color($color: primary, $effect: none) {
+  @if ($color == primary) {
+    color: red;
+
+    @if ($effect == hover) {
+      &:hover {
+        color: darkred;
+      }
+    }
+
+    /* This class denotes a color scheme */
+    .dark-theme & {
+      color: gray;
+
+      @if ($effect == hover) {
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+
+  @if ($color == secondary) {
+    color: blueviolet;
+
+    @if ($effect == hover) {
+      &:hover {
+        color: indigo;
+      }
+    }
+
+    /* This class denotes a color scheme */
+    .dark-theme & {
+      color: blueviolet;
+
+      @if ($effect == hover) {
+        &:hover {
+          color: indigo;
+        }
+      }
+    }
+  }
+}
+
+// Demo
+// h1 {
+//   @include text-color();
+// }
+//
+// a {
+//   @include text-color(secondary, hover);
+// ​​​​​​​}
+
+/* Themeify
+ * *****************************************/
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

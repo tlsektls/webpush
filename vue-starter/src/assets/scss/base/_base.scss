@@ -1,0 +1,163 @@
+/**
+ * Base
+ */
+
+html {
+  font-size: 14px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 15px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+  }
+}
+
+body {
+  padding: 0;
+  font-family: 'Noto Sans Korean', sans-serif;
+  line-height: 1.5;
+  // scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: inherit;
+}
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+form,
+figure,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+dl,
+dd,
+ul,
+ol,
+p,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  i,
+  svg {
+    pointer-events: none;
+  }
+}
+
+a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: darken($primary, 15%);
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+
+textarea {
+  resize: none;
+}
+
+[disabled],
+.disabled {
+  cursor: not-allowed;
+  text-decoration: none;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+select:disabled,
+input:disabled,
+input:read-only,
+textarea:disabled,
+textarea:read-only {
+  color: $gray !important;
+  background-color: #f1f2f3 !important;
+}
+.btn:disabled {
+  opacity: 0.4;
+}
+
+.layout-wrap {
+  position: relative;
+  overflow: hidden;
+}

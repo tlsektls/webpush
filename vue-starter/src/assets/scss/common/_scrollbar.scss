@@ -1,0 +1,23 @@
+/**
+ * Scrollbar Custom
+ */
+
+.scroll-wrap {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 0;
+    border-radius: 10px;
+    background-color: #eef1f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #9ca3a9;
+    background-clip: padding-box;
+    border-radius: 10px;
+  }
+}

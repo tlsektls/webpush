@@ -1,0 +1,69 @@
+/**
+ * to top
+ */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 99;
+
+  button {
+    width: 50px;
+    height: 50px;
+    padding: 5px 5px 0;
+    border-color: transparent;
+    border-radius: 50%;
+    background-color: white;
+    color: #787878;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+    outline: none;
+
+    i {
+      position: relative;
+      top: -3px;
+    }
+  }
+}
+.scroll-to-top.show {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.scroller {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 5%;
+  transition: all 0.2s ease-in-out;
+
+  & > li > a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #efefef;
+    font-size: rem(20);
+    line-height: 2.25;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    padding: 5px 5px 0;
+    border-color: transparent;
+    border-radius: 50%;
+    background-color: white;
+    color: #787878;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+    outline: none;
+
+    i {
+      position: relative;
+      top: -3px;
+    }
+  }
+}
