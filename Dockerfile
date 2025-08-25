@@ -4,9 +4,10 @@
 FROM node:18-bullseye AS frontend
 WORKDIR /app
 COPY vue-starter/package*.json vue-starter/
-RUN cd vue-starter && npm ci
+RUN cd vue-starter && npm install
 COPY vue-starter vue-starter
-ENV NODE_ENV=production
+ENV NODE_ENV=development
+ENV DOCKER_BUILD=true
 RUN cd vue-starter && npm run build
 
 # --- Install backend deps ---------------------------------------------------
