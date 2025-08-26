@@ -28,8 +28,7 @@ COPY --from=frontend /app/vue-starter/dist /app/backend/dist
 
 WORKDIR /app/backend
 
-ENV NODE_ENV=production \
-    PORT=4000
+ENV NODE_ENV=production
 
 EXPOSE 4000
 

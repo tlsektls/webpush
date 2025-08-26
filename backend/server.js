@@ -53,6 +53,11 @@ app.get('/', (req, res) => {
   res.send('✅ 백엔드 서버가 정상적으로 작동 중입니다.');
 });
 
+// 헬스체크 엔드포인트 (Render Health Check 용)
+app.get('/healthz', (req, res) => {
+  res.status(200).send('ok');
+});
+
 
 // VAPID 키 설정 (환경변수 우선)
 const vapidKeys = {
@@ -62,6 +67,9 @@ const vapidKeys = {
 
 if (!vapidKeys.publicKey || !vapidKeys.privateKey) {
   console.warn('⚠️  VAPID 키가 환경변수에 설정되지 않았습니다. dev 용도로만 사용하세요.');
+  // 임시 키 설정 (실제 푸시는 작동하지 않음)
+  vapidKeys.publicKey = 'temp-key';
+  vapidKeys.privateKey = 'temp-key';
 }
 
 webpush.setVapidDetails(
@@ -225,8 +233,8 @@ app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-// 서버 실행
-app.listen(port, () => {
-  console.log(`✅ 서버 실행 중: http://localhost:${port}`);
+// 서버 실행 (명시적으로 0.0.0.0 바인딩)
+app.listen(port, '0.0.0.0', () => {
+  console.log(`✅ 서버 실행 중: http://0.0.0.0:${port}`);
   console.log(`🔐 VAPID Public Key: ${vapidKeys.publicKey}`);
 });
